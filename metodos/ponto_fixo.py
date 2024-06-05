@@ -53,6 +53,7 @@ class MetodoPontoFixo:
         for k in range(self.max_iter):
             q_next = self.funcaoIteracao(self.c, self.q0)
             e = q_next - self.q0
+            
             iters.append(k)
             values.append(q_next)
 
