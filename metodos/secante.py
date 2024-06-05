@@ -24,11 +24,11 @@ class MetodoSecante:
         Formata o output para uma tabela
         """
         pd.options.display.float_format = '{:.15f}'.format
-        table_data = {'k': ['Iteração'], 'Q2': ['Q2'], 'Q1': ['Q1'], 'Q': ['Q'], 'Erro': ['Erro'], 'f(Q2)': ['f(Q2)']}
+        table_data = {'k': ['Iteração'], 'Q2': ['Q2'], 'Q1': ['Q1'], 'Q0': ['Q0'], 'Erro': ['Erro'], 'f(Q2)': ['f(Q2)']}
         table_data['k'][0] = k
         table_data['Q2'][0] = q_next
         table_data['Q1'][0] = self.q1
-        table_data['Q'][0] = self.q0
+        table_data['Q0'][0] = self.q0
         table_data['Erro'][0] = e
         table_data['f(Q2)'][0] = self.funcaoObjetivo(self.c, q_next)
         table = pd.DataFrame(table_data)
