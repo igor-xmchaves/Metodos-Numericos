@@ -20,16 +20,9 @@ class Funcs(object):
                                 fieldbackground="#FFEBE2",
                                 font=("Arial", 9, 'bold'))
     
-    def scrollbar_treeview(self):
-        ### Criação da scrollbar
-        self.scrollTabela = ttk.Scrollbar(self.frame_2, orient= 'vertical')
-        self.tabela.configure(yscroll=self.scrollTabela.set)
-        self.scrollTabela.place(relx= 0.96, rely= 0.01, relwidth= 0.04, relheight= 0.98)
-    
     def menu_submit(self):
         
         self.style_treeview()
-        self.scrollbar_treeview()
         
         ### Condição para mudar as variáveis e a tabela conforme o método
         if self.metodo_var.get() == "Ponto Fixo" or self.metodo_var.get() == "Newton-Rhapson":
@@ -53,6 +46,11 @@ class Funcs(object):
             
             self.tabela.place(relx=0.01, rely=0.01, relwidth=0.95, relheight=0.98)
             
+            ### Criação da scrollbar
+            self.scrollTabela = ttk.Scrollbar(self.frame_2, orient= 'vertical')
+            self.tabela.configure(yscroll=self.scrollTabela.set)
+            self.scrollTabela.place(relx= 0.96, rely= 0.01, relwidth= 0.04, relheight= 0.98)
+    
 
         elif self.metodo_var.get() == "Secante":
             self.show_label()
@@ -77,9 +75,12 @@ class Funcs(object):
 
             self.tabela.place(relx=0.01, rely=0.01, relwidth=0.95, relheight=0.98)
 
-            self.scrollTabela = Scrollbar(self.frame_2, orient= 'vertical')
+            ### Criação da scrollbar
+            self.scrollTabela = ttk.Scrollbar(self.frame_2, orient= 'vertical')
             self.tabela.configure(yscroll=self.scrollTabela.set)
             self.scrollTabela.place(relx= 0.96, rely= 0.01, relwidth= 0.04, relheight= 0.98)
+        
+        
     def hide_label(self):
             self.label_q1.place_forget()
     def show_label(self):
@@ -285,7 +286,6 @@ class Application(Funcs):
         """
 
         self.style_treeview()
-        self.scrollbar_treeview()
 
         self.tabela = ttk.Treeview(self.frame_2, height= 3, columns= ("col1", "col2", "col3", "col4", "col5", "col6"), style= "Custom.Treeview")
         self.tabela.heading("#0", text="")
@@ -305,6 +305,12 @@ class Application(Funcs):
         self.tabela.column("col6", width=50)
 
         self.tabela.place(relx=0.01, rely=0.01, relwidth=0.95, relheight=0.98)
+
+        ### Criação da scrollbar
+        self.scrollTabela = ttk.Scrollbar(self.frame_2, orient= 'vertical')
+        self.tabela.configure(yscroll=self.scrollTabela.set)
+        self.scrollTabela.place(relx= 0.96, rely= 0.01, relwidth= 0.04, relheight= 0.98)
+    
 
     def widgets_frame3(self):
         """
@@ -338,6 +344,7 @@ class Application(Funcs):
                                   highlightbackground='#FFA07A', highlightthickness=3, 
                                   border=1, command=self.executar_metodo)
         self.bt_executar.place(relx=0.30, rely=0.3, relwidth=0.40, relheight=0.36)
+    
     
     def mainloop(self):
         self.master.mainloop()
