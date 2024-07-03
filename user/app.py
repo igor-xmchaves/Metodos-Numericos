@@ -128,11 +128,14 @@ class Funcs(object):
                               font= ('Arial', '13', 'bold'))
             self.label_tol.place(relx=0.43, rely=0.39)
     def show_label(self):
-            self.label_q1 = Label(self.frame_3, text='Q1: ', background=COLOR_BG_3, 
+            self.label_q0 = Label(self.frame_3, text='Q0 ', background=COLOR_BG_3, 
+                              font= ('Arial', '13', 'bold'))
+            self.label_q0.place(relx=0.43, rely=0.20)
+            self.label_q1 = Label(self.frame_3, text='Q1 ', background=COLOR_BG_3, 
                                   font= ('Arial', '13', 'bold'))
             self.label_q1.place(relx=0.43, rely=0.39)
 
-            self.label_tol = Label(self.frame_3, text='Tol: ', background=COLOR_BG_3, 
+            self.label_tol = Label(self.frame_3, text='Tol ', background=COLOR_BG_3, 
                               font= ('Arial', '13', 'bold'))
             self.label_tol.place(relx=0.43, rely=0.58)
     def hide_entry(self):
