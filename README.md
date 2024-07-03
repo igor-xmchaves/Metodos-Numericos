@@ -1,2 +1,4 @@
 # Metodos-Numericos
-Executável na pasta dist
+Trabalho de Métodos Numéricos
+
+
