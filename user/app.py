@@ -413,7 +413,7 @@ class Application(Funcs):
         Criação das labels e entradas do código
         """
         ### Label C
-        self.label_c = Label(self.frame_3, text='C: ', background=COLOR_BG_3, 
+        self.label_c = Label(self.frame_3, text='C ', background=COLOR_BG_3, 
                              font= ('Arial', '13', 'bold'))
         self.label_c.place(relx=0.45, rely=0.01)
         self.c_entry = Entry(self.frame_3, background=COLOR_BG_2, 
@@ -421,15 +421,15 @@ class Application(Funcs):
         self.c_entry.place(relx=0.15, rely=0.08, relwidth= 0.70, relheight=0.07)
 
         ### Label q0
-        self.label_q0 = Label(self.frame_3, text='Q0: ', background=COLOR_BG_3, 
+        self.label_q0 = Label(self.frame_3, text='Q ', background=COLOR_BG_3, 
                               font= ('Arial', '13', 'bold'))
-        self.label_q0.place(relx=0.43, rely=0.20)
+        self.label_q0.place(relx=0.45, rely=0.20)
         self.q0_entry = Entry(self.frame_3, background=COLOR_BG_2, 
                               font= ('Arial', '10'), justify= CENTER)
         self.q0_entry.place(relx=0.15, rely=0.27, relwidth= 0.70, relheight=0.07)
 
         ### Label q1
-        self.label_q1 = Label(self.frame_3, text='Q1: ', background=COLOR_BG_3, 
+        self.label_q1 = Label(self.frame_3, text='Q1 ', background=COLOR_BG_3, 
                               font= ('Arial', '13', 'bold'))
         self.label_q1.place(relx=0.43, rely=0.39)
         self.q1_entry = Entry(self.frame_3, background=COLOR_BG_2, 
@@ -437,7 +437,7 @@ class Application(Funcs):
         self.q1_entry.place(relx=0.15, rely=0.46, relwidth= 0.70, relheight=0.07)
 
         ### Label Tol (erro absoluto)
-        self.label_tol = Label(self.frame_3, text='Tol: ', background=COLOR_BG_3, 
+        self.label_tol = Label(self.frame_3, text='Tol ', background=COLOR_BG_3, 
                               font= ('Arial', '13', 'bold'))
         self.label_tol.place(relx=0.43, rely=0.58)
         self.tol_entry = Entry(self.frame_3, background=COLOR_BG_2, 
