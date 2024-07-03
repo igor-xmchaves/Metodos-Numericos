@@ -1,7 +1,7 @@
 import math
 
 class MetodoSecante:
-    def __init__(self, c, q0, q1, tol=1e-4, max_iter=100):
+    def __init__(self, c, q0, q1, tol, max_iter=100):
         """
         Inicializa o método de ponto fixo.
         """
