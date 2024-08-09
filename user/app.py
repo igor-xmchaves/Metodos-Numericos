@@ -4,6 +4,9 @@ from timeit                  import *
 from metodos.ponto_fixo      import MetodoPontoFixo
 from metodos.newton_rhapson  import MetodoNewtonRhapson
 from metodos.secante         import MetodoSecante
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot     as plt
+import numpy                 as np
 
 
 COLOR_BG_1 = '#FF7F50'
@@ -160,6 +163,7 @@ class Funcs(object):
         for item in self.tabela2.get_children():
             self.tabela2.delete(item)
         
+    
 ### Funções de execução dos métodos
     def ponto_fixo(self, metodo):
         """
@@ -184,7 +188,6 @@ class Funcs(object):
                 return q_next
                 
             metodo.q0 = q_next
-
         raise ValueError("O método de ponto fixo não convergiu após o número máximo de iterações.")
     def newton_rhapson(self, metodo):
         """
@@ -277,7 +280,7 @@ class Funcs(object):
                 raiz = self.ponto_fixo(metodo)
                 tempo = timeit(str(raiz), globals=globals(), number=1)
                 ### printa na tabela 2 a raiz e tempo de execução
-                self.tabela2.insert("", "end", values= (f"{raiz:.10f}", f"{tempo:.10f}")) 
+                self.tabela2.insert("", "end", values= (f"{raiz:.10f}", f"{tempo:.10f}"))
             elif self.metodo_selecionado == "Newton-Rhapson":
                 raiz = self.newton_rhapson(metodo)
                 tempo = timeit(str(raiz), globals=globals(), number=1)
